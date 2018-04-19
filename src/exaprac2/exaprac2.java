@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 /**
  * Nombre de la Clase: exaprac2
  * fecha: 19-04-2018
- * version: 1.0
+ * version: 2.0
  * CopyRight: JulioMenjivar
  * @author JulioMenjivar
  */
@@ -50,8 +50,7 @@ public class exaprac2 {
                     
                    
                     salario[cantIngre] = salarioxHora[cantIngre]*cantHTraba[cantIngre]; //salario
-                    descRenta[cantIngre] = salario[cantIngre]*0.1;
-                   
+                    descRenta[cantIngre] = salario[cantIngre]*0.1; //descuento
                     
                     //PARTE DE ASIGNACION DE BONOS
                     if(salario[cantIngre]>0 && salario[cantIngre]<=350){
@@ -72,6 +71,7 @@ public class exaprac2 {
                     }
                     
                     salarioF[cantIngre] = salario[cantIngre]+bonoPerso[cantIngre]-descRenta[cantIngre];
+                    totalPlanilla = totalPlanilla+salario[cantIngre];
                     
                     if(salarioF[cantIngre]>=700){
                         cantESM++;
@@ -94,14 +94,15 @@ public class exaprac2 {
                     JOptionPane.showMessageDialog(null, "PLANILLA:\n");
                     JOptionPane.showMessageDialog(null, infoTotal+
                                 "\nBonos total: "+nf.format(bonoT)+
+                                "\nTotal Planilla: "+nf.format(totalPlanilla)+
                                 "\nEmpleados con Salario mayor a $700: "+cantESM);
            
                     break;
             }//fin menu
             
-        }while(menu!=3);//Fin Do while
-        
+        }while(menu!=3);//Fin Do while     
         
     }//Fin del Main
     
 }//Fin de la Clase
+
